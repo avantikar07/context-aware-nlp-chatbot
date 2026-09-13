@@ -19,16 +19,20 @@
         {
             "tag": "working_hours",
             "patterns": [
-    "What are the working hours?",
-    "When is the college open?",
-    "What time does the college open?",
-    "When does the college close?",
-    "What are the college timings?",
-    "What are the hours on Sunday?",
-    "Is the college open on Sunday?",
-    "Does the college work on Sunday?",
-    "Are you open on Sunday?"
-]
+                "What are the working hours?",
+                "When is the college open?",
+                "What time does the college open?",
+                "When does the college close?",
+                "What are the college timings?",
+                "What are the hours on Sunday?",
+                "Is the college open on Sunday?",
+                "Does the college work on Sunday?",
+                "Are you open on Sunday?"
+            ],
+            "responses": [
+                "The college is open from 9 AM to 5 PM, Monday to Saturday.",
+                "Our regular working hours are 9 AM to 5 PM, Monday to Saturday."
+            ]
         },
         {
             "tag": "location",

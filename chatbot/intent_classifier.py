@@ -46,18 +46,27 @@ def chatbot_response(user_input, context_manager):
     to generate a response.
     """
 
+    user_input_lower = user_input.lower()
+
+    # Check for Sunday follow-up
+    if "sunday" in user_input_lower:
+        previous_intent = context_manager.get_context()
+
+        if previous_intent == "working_hours":
+            return "The college is closed on Sunday."
+
+    # Detect a normal intent
     intent = get_intent(user_input)
 
-    # If an intent is detected, update the context
     if intent is not None:
         context_manager.update_context(intent)
 
         return get_response(intent)
 
-    # If no new intent is detected, check previous context
+    # If no intent is detected, use previous context
     previous_intent = context_manager.get_context()
 
     if previous_intent == "working_hours":
-        return "The college is closed on Sunday."
+        return "Could you please clarify what you would like to know about the working hours?"
 
     return "Sorry, I don't understand your question."

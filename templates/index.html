@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College FAQ Chatbot</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .chat-container {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #chat-box {
+            height: 350px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 75%;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .user {
+            margin: 10px 0;
+        }
+
+        .bot {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <h2>College FAQ Chatbot</h2>
+
+        <div id="chat-box"></div>
+
+        <form id="chat-form">
+
+            <input
+                type="text"
+                id="message"
+                placeholder="Ask your question..."
+                required
+            >
+
+            <button type="submit">Send</button>
+
+        </form>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById("chat-form").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            let message = document.getElementById("message").value;
+
+            let chatBox = document.getElementById("chat-box");
+
+            // Display user's message
+            chatBox.innerHTML +=
+                "<div class='user'><b>You:</b> " + message + "</div>";
+
+            // Send message to Flask
+            fetch("/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: "message=" + encodeURIComponent(message)
+            })
+
+            .then(response => response.text())
+
+            .then(data => {
+
+                // Display chatbot response
+                chatBox.innerHTML +=
+                    "<div class='bot'><b>Bot:</b> " + data + "</div>";
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+
+            // Clear input box
+            document.getElementById("message").value = "";
+
+        });
+
+    </script>
+
+</body>
+</html>
