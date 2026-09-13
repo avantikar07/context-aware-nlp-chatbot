@@ -1,0 +1,116 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hello",
+                "Hey",
+                "Good morning",
+                "Good afternoon",
+                "Is anyone there?"
+            ],
+            "responses": [
+                "Hello! How can I help you?",
+                "Hi! What would you like to know?",
+                "Hey! I am here to help."
+            ]
+        },
+        {
+            "tag": "working_hours",
+            "patterns": [
+    "What are the working hours?",
+    "When is the college open?",
+    "What time does the college open?",
+    "When does the college close?",
+    "What are the college timings?",
+    "What are the hours on Sunday?",
+    "Is the college open on Sunday?",
+    "Does the college work on Sunday?",
+    "Are you open on Sunday?"
+]
+        },
+        {
+            "tag": "location",
+            "patterns": [
+                "Where is the college?",
+                "What is the college location?",
+                "Where are you located?",
+                "How can I reach the college?",
+                "What is the address?"
+            ],
+            "responses": [
+                "The college is located in Coimbatore.",
+                "You can find the college in Coimbatore."
+            ]
+        },
+        {
+            "tag": "services",
+            "patterns": [
+                "What services do you provide?",
+                "What facilities are available?",
+                "What does the college offer?",
+                "Tell me about the facilities",
+                "What services are available?"
+            ],
+            "responses": [
+                "The college provides academic programs, library facilities, laboratories, student activities, and other campus services."
+            ]
+        },
+        {
+            "tag": "fees",
+            "patterns": [
+                "What are the fees?",
+                "How much is the fee?",
+                "Tell me about the fees",
+                "What is the tuition fee?",
+                "How much does the course cost?"
+            ],
+            "responses": [
+                "Fee details depend on the course. Please contact the college administration for the latest fee structure."
+            ]
+        },
+        {
+            "tag": "contact",
+            "patterns": [
+                "How can I contact the college?",
+                "What is the contact number?",
+                "How do I contact you?",
+                "Give me the college contact details",
+                "Where can I contact the administration?"
+            ],
+            "responses": [
+                "You can contact the college administration for official contact details."
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thank you",
+                "Thanks",
+                "Thank you so much",
+                "That's helpful",
+                "Thanks for your help"
+            ],
+            "responses": [
+                "You're welcome!",
+                "Happy to help!",
+                "Anytime!"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "Goodbye",
+                "See you",
+                "See you later",
+                "I have to go"
+            ],
+            "responses": [
+                "Goodbye! Have a great day!",
+                "See you later!"
+            ]
+        }
+    ]
+}
